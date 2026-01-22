@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchRepos } from '../api/github'
 
@@ -32,25 +33,13 @@ function Projects() {
             <div className="projects">
                 {repos.map((repo) => (
                     <div key={repo.id} className="project-card">
-                        <h3>{repo.name}</h3>
+                        <Link to={`/projects/${repo.name}`}>
+                            {repo.name}
+                        </Link>
 
                         <p>{repo.description || 'No description provided.'}</p>
 
-                        <p>
-                            <strong>Topics:</strong>{' '}
-                            {repo.topics || 'N/A' }
-                        </p>
-
-                        <p>
-                            <strong>Language:</strong>{' '}
-                            {repo.language || 'N/A'}
-                        </p>
-
-                        <a
-                            href={repo.html_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
+                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" >
                             View on GitHub
                         </a>
                     </div>

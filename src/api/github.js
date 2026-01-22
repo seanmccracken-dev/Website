@@ -11,3 +11,15 @@ export async function fetchRepos() {
 
 	return response.json()
 }
+
+export async function fetchRepo(name) {
+	const response = await fetch(
+		`https://api.github.com/repos/${GITHUB_USER}/${name}`
+	)
+
+	if (!response.ok) {
+		throw new Error('Failed to fetch GitHub repo')
+	}
+
+	return response.json()
+}
