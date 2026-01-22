@@ -1,4 +1,4 @@
-# React Portfolio Site
+# React Website
 
 This is my personal portfolio website built with **React** and **Vite**.  
 The primary goal of this project is to **learn modern React patterns** while building something real, useful, and continuously improvable.
@@ -7,7 +7,7 @@ Rather than following a tutorial end-to-end, this project evolves incrementally 
 
 ---
 
-## 🚀 Project Goals
+## Project Goals
 
 - Learn and apply **modern React fundamentals**
 - Practice building a real-world SPA from scratch
@@ -21,7 +21,7 @@ This site serves both as:
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **React 18**
 - **Vite** (fast dev/build tooling)
@@ -31,17 +31,4 @@ This site serves both as:
 - Plain CSS (no framework)
 
 ---
-
-## ✨ Features
-
-- Multi-page navigation using React Router
-- Projects list dynamically fetched from GitHub
-- Project detail pages with live repository data
-- README.md rendering directly from GitHub repositories
-- Loading and error states for API calls
-- Clean, readable component structure
-
----
-
-## 📂 Project Structure
 
