@@ -1,18 +1,17 @@
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
 
 function App() {
     return (
         <div className="container">
             <Header />
 
-            <main>
-                <h2>Welcome</h2>
-                <p>
-                    This is my professional site built with React and Vite.
-                </p>
-            </main>
-
-            
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<Projects />} />
+            </Routes>
         </div>
     )
 }
