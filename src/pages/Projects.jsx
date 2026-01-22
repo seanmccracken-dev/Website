@@ -38,10 +38,6 @@ function Projects() {
                         </Link>
 
                         <p>{repo.description || 'No description provided.'}</p>
-
-                        <a href={repo.html_url} target="_blank" rel="noopener noreferrer" >
-                            View on GitHub
-                        </a>
                     </div>
                 ))}
             </div>
