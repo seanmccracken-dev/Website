@@ -1,40 +1,58 @@
-const projects = [
-    {
-        title: 'Video Transcription Tool',
-        description:
-            'A Python & Flask app that downloads videos and generates searchable transcripts.',
-        tech: ['Python', 'Flask', 'SQLite']
-    },
-    {
-        title: 'FastAPI Backend',
-        description:
-            'REST API built with FastAPI, JWT authentication, and PostgreSQL.',
-        tech: ['Python', 'FastAPI']
-    },
-    {
-        title: 'React Portfolio',
-        description:
-            'This site! Built with React, Vite, and modern frontend tooling.',
-        tech: ['React', 'Vite', 'CSS']
-    }
-]
+import { useEffect, useState } from 'react'
+import { fetchRepos } from '../api/github'
 
 function Projects() {
+    const [repos, setRepos] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+
+    useEffect(() => {
+        fetchRepos().then((data) => {
+            setRepos(data)
+            setLoading(false)
+        })
+        .catch((err) => {
+            setError(err.message)
+            setLoading(false)
+        })
+    }, [])
+
+    if (loading) {
+        return <p>Loading projects...</p>
+    }
+
+    if (error) {
+        return <p>Error: { error }</p>
+    }
+
     return (
         <main>
             <h2>Projects</h2>
 
             <div className="projects">
-                {projects.map((project, index) => (
-                    <div key={index} className="project-card">
-                        <h3>{project.title}</h3>
-                        <p>{project.description}</p>
+                {repos.map((repo) => (
+                    <div key={repo.id} className="project-card">
+                        <h3>{repo.name}</h3>
 
-                        <ul>
-                            {project.tech.map((t) => (
-                                <li key={t}>{t}</li>
-                            ))}
-                        </ul>
+                        <p>{repo.description || 'No description provided.'}</p>
+
+                        <p>
+                            <strong>Topics:</strong>{' '}
+                            {repo.topics || 'N/A' }
+                        </p>
+
+                        <p>
+                            <strong>Language:</strong>{' '}
+                            {repo.language || 'N/A'}
+                        </p>
+
+                        <a
+                            href={repo.html_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View on GitHub
+                        </a>
                     </div>
                 ))}
             </div>
