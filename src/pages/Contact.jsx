@@ -1,5 +1,9 @@
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+
 function Contact() {
-    const EMAIL = 'seanmccracken.dev@gmail.com'
+    const user = 'seanmccracken.dev'
+    const domain = 'gmail.com'
+    const EMAIL = `${user}@${domain}`
     const GITHUB_USER = 'seanmccracken-dev'
     const LINKEDIN_USER = 'seantmccracken'
 
@@ -12,16 +16,16 @@ function Contact() {
                 collaborations, or interesting projects.
             </p>
 
-            <ul>
+            <ul class="contact-list">
                 <li>
-                    <strong>Email:</strong>{' '}
+                    <FaEnvelope />
                     <a href={`mailto:${EMAIL}`}>
                         {EMAIL}
                     </a>
                 </li>
 
                 <li>
-                    <strong>GitHub:</strong>{' '}
+                    <FaGithub />
                     <a
                         href={`https://github.com/${GITHUB_USER}`}
                         target="_blank"
@@ -32,7 +36,7 @@ function Contact() {
                 </li>
 
                 <li>
-                    <strong>LinkedIn:</strong>{' '}
+                    <FaLinkedin />
                     <a
                         href={`https://www.linkedin.com/in/${LINKEDIN_USER}`}
                         target="_blank"
