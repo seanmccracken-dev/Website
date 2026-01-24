@@ -23,3 +23,18 @@ export async function fetchRepo(name) {
 
 	return response.json()
 }
+
+export async function fetchReadme(name) {
+	const response = await fetch(
+		`https://api.github.com/repos/${GITHUB_USER}/${name}/readme`
+	)
+
+	if (!response.ok) {
+		return null
+	}
+
+	const data = await response.json()
+	const decodedReadme = atob(data.content.replace(/\n/g,''))
+
+	return decodedReadme
+}
