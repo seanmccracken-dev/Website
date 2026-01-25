@@ -28,8 +28,6 @@ function Projects() {
 
     return (
         <main>
-            <h2>Projects</h2>
-
             <div className="projects">
                 {repos.map((repo) => (
                     <div key={repo.id} className="project-card">

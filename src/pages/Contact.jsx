@@ -9,8 +9,6 @@ function Contact() {
 
     return (
         <main>
-            <h2>Contact</h2>
-
             <p>
                 I'm open to discussing software engineering opportunities,
                 collaborations, or interesting projects.
@@ -31,7 +29,7 @@ function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        github.com/${GITHUB_USER}
+                        github.com/{GITHUB_USER}
                     </a>
                 </li>
 
@@ -42,7 +40,7 @@ function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        linkedin.com/in/${LINKEDIN_USER}
+                        linkedin.com/in/{LINKEDIN_USER}
                     </a>
                 </li>
             </ul>
