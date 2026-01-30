@@ -28,7 +28,6 @@ This site serves both as:
 - **React Router**
 - **GitHub REST API**
 - **react-markdown**
-- Plain CSS (no framework)
 
 ---
 

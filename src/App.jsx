@@ -6,20 +6,22 @@ import ProjectDetail from './pages/ProjectDetail'
 import Resume from './pages/Resume'
 import Contact from './pages/Contact'
 
+
 function App() {
     return (
-        <div className="container">
-            <Header />
-
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/projects/:name" element={<ProjectDetail />} />
-                <Route path="/resume" element={<Resume />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
+        <div className="min-vh-100 bg-dark text-light" data-bs-theme="dark">
+            <div className="container py-4">
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/:name" element={<ProjectDetail />} />
+                    <Route path="/resume" element={<Resume />} />
+                    <Route path="/contact" element={<Contact />} />
+                </Routes>
+            </div>
         </div>
-    )
+    );
 }
 
 export default App
