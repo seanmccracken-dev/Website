@@ -28,14 +28,19 @@ function Projects() {
 
     return (
         <main>
-            <div className="projects">
+            <div className="row g-4">
                 {repos.map((repo) => (
-                    <div key={repo.id} className="project-card">
-                        <Link to={`/projects/${repo.name}`}>
-                            {repo.name}
-                        </Link>
-
-                        <p>{repo.description || 'No description provided.'}</p>
+                    <div key={repo.id} className="col-md-6 col-lg-4">
+                        <div className="card bg-light text-dark h-100 shadow">
+                            <div className="card-body d-flex flex-column">
+                                <h5 className="card-title">
+                                    <Link to={`/projects/${repo.name}`} className="stretched-link text-dark text-decoration-none">
+                                        {repo.name}
+                                    </Link>
+                                </h5>
+                                <p className="card-text flex-grow-1">{repo.description || 'No description provided.'}</p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
